@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="ayakaOS | 专业级Arch体验，开箱即用">
+    <meta name="keywords" content="ayakaOS,Arch Linux,Linux发行版">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>ayakaOS | 专业级Arch体验，开箱即用</title>
+
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com?v=3.4.1"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#0D9488',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    screens: {
+                        sm: '360px',
+                        md: '768px',
+                        lg: '1024px',
+                        xl: '1280px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto { content-visibility: auto; }
+            .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+            .btn-hover { @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5; }
+            .btn-adapt { @apply px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-3; }
+        }
+    </style>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: #F8FAFC; 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @media (max-width: 767px) {
+            .hero { background-attachment: scroll; }
+            * { touch-action: manipulation; box-sizing: border-box; }
+        }
+        .hero {
+            background: linear-gradient(rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.9)), url('https://raw.githubusercontent.com/ayakaOS/ayakaOS/refs/heads/main/wallpapers/ayakaOS_01/contents/images/1920x1080.png');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="font-sans text-dark antialiased min-h-screen lang=zh-CN">
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-dark/95 text-light py-2 sm:py-3 transition-all duration-300">
+        <div class="container mx-auto px-3 sm:px-4 flex justify-between items-center">
+            <a href="./" class="text-lg sm:text-xl font-bold text-white">ayakaOS</a>
+            <nav class="hidden lg:flex space-x-6 xl:space-x-8">
+                <a href="#download" class="hover:text-primary transition-colors text-sm sm:text-base">下载</a>
+                <a href="#features" class="hover:text-primary transition-colors text-sm sm:text-base">特性</a>
+                <a href="#docs" class="hover:text-primary transition-colors text-sm sm:text-base">文档</a>
+                <a href="#team" class="hover:text-primary transition-colors text-sm sm:text-base">团队</a>
+                <a href="#community" class="hover:text-primary transition-colors text-sm sm:text-base">社区</a>
+            </nav>
+            <span class="hidden md:block text-xs sm:text-sm text-gray-300">v26.02</span>
+            <button id="menuBtn" class="lg:hidden text-light focus:outline-none">
+                <i class="fa fa-bars text-lg sm:text-xl"></i>
+            </button>
+        </div>
+        <nav id="mobileMenu" class="hidden lg:hidden bg-dark/98 w-full">
+            <div class="container mx-auto px-3 sm:px-4 py-2 flex flex-col space-y-2 sm:space-y-3">
+                <a href="#download" class="py-2 hover:text-primary transition-colors">下载</a>
+                <a href="#features" class="py-2 hover:text-primary transition-colors">特性</a>
+                <a href="#docs" class="py-2 hover:text-primary transition-colors">文档</a>
+                <a href="#team" class="py-2 hover:text-primary transition-colors">团队</a>
+                <a href="#community" class="py-2 hover:text-primary transition-colors">社区</a>
+                <span class="text-xs text-gray-400 pt-1">v26.02</span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero pt-20 sm:pt-24 md:pt-32 lg:pt-40 pb-16 sm:pb-20 md:pb-24 lg:pb-28 text-center text-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-shadow">ayakaOS</h1>
+            <p class="text-base sm:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-xl mx-auto leading-relaxed">专业级Arch体验，开箱即用</p>
+            <div class="flex justify-center">
+                <a href="#download" class="btn-hover bg-primary text-white btn-adapt rounded-lg font-medium">立即下载 ⬇️</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-12 sm:py-16 lg:py-24 bg-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-10 sm:mb-12 lg:mb-16">ayakaOS 核心优势</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fa fa-rocket text-primary text-base sm:text-xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">开箱即用体验</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">预配置中文环境、图形界面、国内镜像源和常用软件，无需额外配置即可使用</p>
+                </div>
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fa fa-cogs text-primary text-base sm:text-xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">专业安装流程</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">使用Calamares安装器，提供分区向导和系统配置选项，适合各层次用户</p>
+                </div>
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fa fa-user text-primary text-base sm:text-xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">用户友好设计</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">专为中文用户优化的界面和文档，降低Arch Linux使用门槛</p>
+                </div>
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fa fa-code-fork text-primary text-base sm:text-xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">全系统开源</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">完整开放系统源码，支持自由定制、二次开发，对接开源社区资源，拥有海量软件拓展能力</p>
+                </div>
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fa fa-shield text-primary text-base sm:text-xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">系统稳定性</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">默认BTRFS文件系统，集成Timeshift快照功能，保障系统稳定运行</p>
+                </div>
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fa fa-lock text-primary text-base sm:text-xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2">安全更新机制</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">滚动更新模式，及时获取安全补丁，保持系统安全可靠</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-12 sm:py-16 lg:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-10 sm:mb-12 lg:mb-16">工作人员列表</h2>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                        <h3 class="text-xl font-semibold mb-2">SunLife</h3>
+                        <p class="text-gray-600">系统开发、bug修复</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                        <h3 class="text-xl font-semibold mb-2">碳酸氢钠</h3>
+                        <p class="text-gray-600">系统开发、创意设计</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 sm:py-16 bg-primary/5">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-base sm:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">基于 Arch Linux 的专业发行版，提供开箱即用的中文体验和完整软件生态</p>
+            <div class="flex justify-center">
+                <a href="#download" class="btn-hover bg-primary text-white btn-adapt rounded-lg font-medium">立即下载</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="py-12 sm:py-16 lg:py-24 bg-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-10 sm:mb-12 lg:mb-16">下载 ayakaOS</h2>
+            <div class="max-w-2xl sm:max-w-3xl mx-auto bg-white p-5 sm:p-8 rounded-xl shadow-md">
+                <div class="mb-5 sm:mb-6 border-b pb-3 sm:pb-4">
+                    <h3 class="text-lg sm:text-xl font-semibold mb-1">ayakaOS 26</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">26.02</p>
+                    <p class="text-gray-500 text-xs sm:text-sm mt-1">Size: 3.2GB</p>
+                </div>
+                <div class="flex justify-center mb-6 sm:mb-8">
+                    <a href="#" class="btn-hover bg-primary text-white px-5 py-3 rounded-lg text-center text-sm sm:text-base">
+                        <i class="fa fa-download mr-2"></i> 直接下载
+                    </a>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-2 text-sm sm:text-base">下载说明</h4>
+                    <ul class="text-gray-600 space-y-1 sm:space-y-2 list-disc list-inside text-xs sm:text-sm">
+                        <li>推荐使用Etcher或Ventoy制作启动盘</li>
+                        <li>支持UEFI和Legacy启动模式</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="docs" class="py-12 sm:py-16 lg:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-10 sm:mb-12 lg:mb-16">ayakaOS 文档中心</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl sm:max-w-5xl mx-auto">
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-md">
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 pb-2 border-b">入门指南</h3>
+                    <ul class="space-y-2 sm:space-y-3 mb-3 sm:mb-4 text-sm sm:text-base">
+                        <li><a href="#" class="text-primary hover:underline">安装教程 - 从制作启动盘到完成安装的详细步骤</a></li>
+                        <li><a href="#" class="text-primary hover:underline">首次使用 - 系统基本配置和常用功能介绍</a></li>
+                        <li><a href="#" class="text-primary hover:underline">软件安装 - 使用pacman和yay安装软件的方法</a></li>
+                        <li><a href="#" class="text-primary hover:underline">系统更新 - 安全更新系统的最佳实践</a></li>
+                    </ul>
+                    <a href="#" class="text-primary hover:underline flex items-center text-sm sm:text-base">查看全部入门文档 →</a>
+                </div>
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-md">
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 pb-2 border-b">系统管理</h3>
+                    <ul class="space-y-2 sm:space-y-3 mb-3 sm:mb-4 text-sm sm:text-base">
+                        <li><a href="#" class="text-primary hover:underline">BTRFS配置 - 子卷和快照的高级用法</a></li>
+                        <li><a href="#" class="text-primary hover:underline">内核定制 - 编译和安装自定义内核</a></li>
+                        <li><a href="#" class="text-primary hover:underline">系统优化 - 提升性能和电池续航的技巧</a></li>
+                        <li><a href="#" class="text-primary hover:underline">故障排除 - 常见问题和解决方案</a></li>
+                    </ul>
+                    <a href="#" class="text-primary hover:underline flex items-center text-sm sm:text-base">查看全部系统管理指南 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="py-12 sm:py-16 lg:py-24 bg-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-10 sm:mb-12 lg:mb-16">加入 ayakaOS 社区</h2>
+            <div class="max-w-2xl sm:max-w-3xl mx-auto space-y-6">
+                <a href="https://github.com/ayakaOS/ayakaOS" target="_blank" class="btn-hover bg-dark text-white p-4 sm:p-6 rounded-xl text-center flex flex-col items-center justify-center block">
+                    <i class="fa fa-github text-2xl sm:text-3xl mb-2 sm:mb-3"></i>
+                    <h3 class="font-semibold text-sm sm:text-base">GitHub</h3>
+                    <p class="text-xs sm:text-sm mt-1 text-gray-300">提交反馈 贡献代码</p>
+                </a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="https://space.bilibili.com/3691009835797244" target="_blank" class="btn-hover bg-[#FB7299] text-white p-4 sm:p-6 rounded-xl text-center flex flex-col items-center justify-center">
+                        <i class="fa fa-play-circle-o text-2xl sm:text-3xl mb-2 sm:mb-3"></i>
+                        <h3 class="font-semibold text-sm sm:text-base">哔哩哔哩</h3>
+                        <p class="text-xs sm:text-sm mt-1 text-gray-100">教程视频 动态更新</p>
+                    </a>
+                    <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=FkM6Ioo%2BFDfuIhonnTQWS9%2BdFKB03mn7y4dslGZ26GbKJnPRmQ7tklsaB%2FhAjDIR&busi_data=eyJncm91cENvZGUiOiIxMDA3MTYwNzAyIiwidG9rZW4iOiJrcmF3K0Z4N3Z3MVAyUkR2bHBVQ0RGOUpxenZ6eG91enZhdjI2ZFBSMnU2VmE2dFpVNEhQaTZPeGlMS2J6MmtzIiwidWluIjoiMjQ3OTYxMDM5NCJ9&data=MAcRI_HJKvepirbx6C48x9VSn9IiwuZORd87xGQwX6GD077GG0gCY17MemWH8IKh6FHuvlnoOh6wtOYoWc2xJg&svctype=4&tempid=h5_group_info" target="_blank" class="btn-hover bg-[#12B7F5] text-white p-4 sm:p-6 rounded-xl text-center flex flex-col items-center justify-center">
+                        <i class="fa fa-qq text-2xl sm:text-3xl mb-2 sm:mb-3"></i>
+                        <h3 class="font-semibold text-sm sm:text-base">QQ 群</h3>
+                        <p class="text-xs sm:text-sm mt-1 text-gray-100">实时交流 问题求助</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-8 sm:py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">ayakaOS</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">基于Arch Linux的专业发行版</p>
+                </div>
+                <div class="hidden md:block">
+                    <h4 class="font-semibold mb-3 text-sm sm:text-base">快速链接</h4>
+                    <ul class="space-y-1 sm:space-y-2 text-gray-400 text-xs sm:text-sm">
+                        <li><a href="#features" class="hover:text-primary transition-colors">特性</a></li>
+                        <li><a href="#download" class="hover:text-primary transition-colors">下载</a></li>
+                        <li><a href="#docs" class="hover:text-primary transition-colors">文档</a></li>
+                        <li><a href="#team" class="hover:text-primary transition-colors">团队</a></li>
+                        <li><a href="#community" class="hover:text-primary transition-colors">社区</a></li>
+                    </ul>
+                </div>
+                <div class="hidden lg:block">
+                    <h4 class="font-semibold mb-3 text-sm sm:text-base">资源</h4>
+                    <ul class="space-y-1 sm:space-y-2 text-gray-400 text-xs sm:text-sm">
+                        <li><a href="https://github.com/ayakaOS/ayakaOS" target="_blank" class="hover:text-primary transition-colors">GitHub 仓库</a></li>
+                        <li><a href="https://wiki.archlinux.org" target="_blank" class="hover:text-primary transition-colors">Arch Wiki</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">常见问题</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">捐赠支持</a></li>
+                    </ul>
+                </div>
+                <div class="hidden lg:block">
+                    <h4 class="font-semibold mb-3 text-sm sm:text-base">法律</h4>
+                    <ul class="space-y-1 sm:space-y-2 text-gray-400 text-xs sm:text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">隐私政策</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">使用条款</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Open Source License</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs sm:text-sm text-gray-400 md:hidden mb-4">
+                <a href="#features" class="hover:text-primary">特性</a>
+                <a href="#download" class="hover:text-primary">下载</a>
+                <a href="#docs" class="hover:text-primary">文档</a>
+                <a href="#team" class="hover:text-primary">团队</a>
+                <a href="#community" class="hover:text-primary">社区</a>
+                <a href="https://github.com/ayakaOS/ayakaOS" target="_blank" class="hover:text-primary">GitHub</a>
+            </div>
+            <div class="border-t border-gray-800 pt-6 sm:pt-8 text-center text-gray-500 text-xs sm:text-sm">
+                © ayakaOS Team
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (navbar) {
+                    if (window.scrollY > 30) {
+                        navbar.classList.add('py-1', 'shadow-md');
+                        navbar.classList.remove('py-2', 'sm:py-3');
+                    } else {
+                        navbar.classList.add('py-2', 'sm:py-3');
+                        navbar.classList.remove('py-1', 'shadow-md');
+                    }
+                }
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 60,
+                            behavior: 'smooth'
+                        });
+                        if (mobileMenu) mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (menuBtn && mobileMenu && !menuBtn.contains(e.target) && !mobileMenu.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
